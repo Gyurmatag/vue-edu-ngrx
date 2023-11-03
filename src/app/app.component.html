@@ -1,0 +1,19 @@
+<div class="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div class="bg-white p-8 rounded-xl shadow-md w-96">
+        <form (ngSubmit)="addGreeting()">
+            <input [(ngModel)]="name"
+                   name="name"
+                   placeholder="Your name"
+                   required
+                   class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200 transition" />
+            <button type="submit" class="mt-4 p-2 bg-blue-500 text-white rounded-md">
+                Add Greeting
+            </button>
+        </form>
+        <ul class="mt-4">
+            <li *ngFor="let greeting of greetings$ | async" class="text-xl font-semibold text-gray-700">
+                {{ greeting }}
+            </li>
+        </ul>
+    </div>
+</div>
